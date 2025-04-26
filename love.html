@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Чи надад хайртай юу?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #ffccff);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .thank-you-message {
+      font-size: 28px;
+      font-weight: bold;
+      color: #ff69b4;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .card {
+      background: rgba(255, 192, 203, 0.85);
+      border-radius: 30px;
+      padding: 40px 30px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      position: relative;
+      display: none; /* Эхэндээ нуусан */
+      animation: fadeIn 1s ease-out;
+    }
+
+    .card::before {
+      content: "💖";
+      font-size: 60px;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .btn-container {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    .answer-btn {
+      padding: 14px 28px;
+      font-size: 16px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .yes-btn {
+      background-color: #fff;
+      color: #ff69b4;
+    }
+
+    .yes-btn:hover {
+      background-color: #ffe6f0;
+    }
+
+    .no-btn {
+      background-color: #ff99aa;
+      color: white;
+      position: relative;
+    }
+
+    .no-btn:hover {
+      background-color: #ff6f91;
+    }
+
+    #response {
+      margin-top: 25px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.4s ease;
+    }
+
+    #response.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #back-btn {
+      display: none;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #fff;
+      color: #ff69b4;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    #back-btn:hover {
+      background-color: #ffe6f0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .btn-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      .no-btn {
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Урилга -->
+    <p class="thank-you-message" id="thankYouMessage">
+      🎉 Урилгыг минь хүлээн авсанд баярлалаа! 🎉
+    </p>
+
+    <!-- Гол асуултын карт -->
+    <div class="card" id="card">
+      <h1>Чи надад хайртай юу?</h1>
+      <div class="btn-container">
+        <button class="answer-btn yes-btn" onclick="showLove()">Тийм</button>
+        <button class="answer-btn no-btn" id="noBtn" onclick="moveButton()">Үгүй</button>
+      </div>
+      <p id="response"></p>
+      <a href="video.html" id="back-btn">Намайг дараач 🥺</a>
+    </div>
+  </div>
+
+  <!-- 🎶 Дуу -->
+  <audio autoplay loop>
+    <source src="love-you-3000.mp3" type="audio/mpeg">
+    Таны браузер дуу тоглуулах боломжгүй байна.
+  </audio>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const response = document.getElementById("response");
+    const backBtn = document.getElementById("back-btn");
+    const thankYouMessage = document.getElementById("thankYouMessage");
+    const card = document.getElementById("card");
+
+    // Сайт ачааллах үед
+    window.onload = function() {
+      setTimeout(() => {
+        thankYouMessage.style.display = "none"; // Урилгыг алга болгоно
+        card.style.display = "block"; // Картыг гаргана
+      }, 2500); // 2.5 секунд хүлээж харуулна
+    };
+
+    function showLove() {
+      response.innerText = "Би ч бас чамд хязгааргүй их хайртай! ❤️";
+      response.classList.add("show");
+      backBtn.style.display = "inline-block";
+    }
+
+    function moveButton() {
+      const x = Math.random() * 100 - 50;
+      const y = Math.random() * 60 - 30;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+      response.innerText = "Чи яагаад ингэж байна вэ... 🥺";
+      response.classList.add("show");
+      backBtn.style.display = "none";
+    }
+  </script>
+</body>
+</html>

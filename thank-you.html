@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Миний сэтгэлийн захиа</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #ffccff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .envelope {
+      width: 570px;
+      height: auto;
+      background-color: #fcfbfc;
+      position: relative;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      overflow: hidden;
+      animation: slideDown 1.2s ease-out;
+      text-align: center;
+    }
+
+    .flap {
+      width: 100%;
+      height: 300px;
+      background-color: #ffb6c1;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform-origin: top;
+      animation: openFlap 2s ease-out forwards;
+      z-index: 2;
+    }
+
+    .letter-content {
+      background: repeating-linear-gradient(
+        to bottom,
+        #fff8f0,
+        #fff8f0 28px,
+        #ffeef5 29px
+      );
+      border: 1px solid #ffe4e1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 80px 40px 30px 40px;
+      margin: 40px;
+      max-height: 0;
+      transform: scale(0.9);
+      overflow: hidden;
+      opacity: 0;
+      color: #ff69b4;
+      position: relative;
+      z-index: 1;
+      transition: all 1s ease;
+    }
+
+    .letter-content.show {
+      max-height: 1000px;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .letter-content h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .letter-content p {
+      font-size: 15px;
+      line-height: 1;
+      text-align: left;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .continue-btn {
+      display: none;
+      margin-top: 18px;
+      padding: 10px 22px;
+      background-color: #ff69b4;
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      font-size: 14px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .continue-btn:hover {
+      background-color: #ff85c1;
+      transform: scale(1.05);
+    }
+
+    @keyframes openFlap {
+      0% {
+        transform: rotateX(0deg);
+      }
+      100% {
+        transform: rotateX(-150deg);
+      }
+    }
+
+    @keyframes slideDown {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .envelope {
+        width: 90%;
+      }
+
+      .letter-content p {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="envelope">
+    <div class="flap"></div>
+    <div class="letter-content" id="letter">
+      <h2>Сайн байна уу? Хайрт минь ❤️</h2>
+      <p>Чамдаа энэ захидал очих өдрийн мэнд хүргэе. Чамтай учирсан тэр мөчөөс эхлэн бүх зүйл утга учиртай болж, ертөнц тэр чигтээ гэрэлтэж эхэлсэн.</p>
+      <p>Чиний инээмсэглэл, нүд, намуухан дуу хоолой энэ бүхэн миний сэтгэлийг өдөр бүр догдлуулж, хайрыг мэдрүүлдэг.</p>
+      <p>Чи минь надад мөрөөдөл, зорилго, амьдралын утга учрыг ойлгуулсан. Өглөө бүр чиний тухай бодож сэрдэг, орой бүр чинийхээ тухай бодон унтдаг.</p>
+      <p>Зарим өдөр хэцүү, ядралтай байж болох ч чамайг бодох бүрд бүгдийг давж гармаар, чамтайгаа хамт хичээмээр санагддаг.</p>
+      <p>Чи миний сэтгэлд үргэлж нар мэт гэрэлтдэг, миний итгэл найдвар, миний мөрөөдөл.</p>
+      <p>Ганцхан инээмсэглэл чинь миний бүх ядаргааг арилгаж чаддаг.</p>
+      <p>Би чамтай инээж, уйлж, мөрөөдөж, амьдралын бүх мөчийг хуваалцмаар байна.</p>
+      <p>Ирээдүйд юу ч тохиолдсон, бид хамтдаа байхад бүх зүйл утга учиртай болох юм шиг санагдана.</p>
+      <p>Би чамтай аялахыг, чамд өөрийн гараар өглөөний цай бэлдэж өгөхийг, хамт дуртай дуугаа сонсож, шөнөжин ярилцахыг хүсдэг.</p>
+      <p>Чи бол миний зүрхний хамгийн үнэ цэнтэй нандин хүн.</p>
+      <p>Би чамайг чин сэтгэлээсээ хайрлаж, хүндэлж, халамжилж, үргэлж чинийхээ хажууд байх болно.</p>
+      <p>Хайрт минь, чи намайг бүхэл бүтэн хүн болгосон. Үнэхээр баярлалаа.</p>
+      <p>Үүрд хамт байцгаая, хамт хөгширцгөөе... Хайрт минь.💌</p>
+      <button class="continue-btn" onclick="window.location.href = 'about.html';">Үргэлжлүүлэх →</button>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      const content = document.querySelector('.letter-content');
+      const paragraphs = content.querySelectorAll('p');
+      const button = document.querySelector('.continue-btn');
+
+      setTimeout(() => {
+        content.classList.add('show');
+      }, 2000);
+
+      let delay = 3000;
+      paragraphs.forEach((para) => {
+        setTimeout(() => {
+          para.style.opacity = '1';
+        }, delay);
+        delay += 100;
+      });
+
+      setTimeout(() => {
+        button.style.display = 'inline-block';
+        button.style.opacity = '1';
+        button.style.transform = 'translateY(0)';
+      }, delay + 500);
+    });
+  </script>
+  <audio autoplay loop>
+    <source src="Dandaa hairtai.mp3" type="audio/mpeg">
+    Таны браузер аудио тоглуулах боломжгүй байна.
+  </audio>
+  
+</body>
+</html>

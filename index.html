@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2 жилийн ойн баяр</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #ffccff);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    header {
+      background: rgba(255, 192, 203, 0.9);
+      border-radius: 30px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+      animation: float 6s ease-in-out infinite;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    /* 2 жилийн ойн дугуй бичиг */
+    .anniversary {
+      
+      color: #fff;
+      font-family: 'Pacifico', cursive;
+      padding: 20px 30px;
+      margin-bottom: 20px;
+      border-radius: 50px;
+      font-size: 24px;
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.7);
+      animation: glow 1.5s infinite alternate;
+      display: inline-block;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #ff66cc, 0 0 20px #ff66cc; }
+      100% { box-shadow: 0 0 20px #ff99cc, 0 0 30px #ff99cc; }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 36px;
+      margin-bottom: 10px;
+      animation: bounceIn 2s ease-out;
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      animation: fadeInText 2s ease-out;
+    }
+
+    @keyframes fadeInText {
+      0% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .love-image {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 5px solid #ff99cc;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      background-color: #fff;
+      color: #ff69b4;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .btn:hover {
+      background-color: #ffe6f0;
+      transform: scale(1.1);
+    }
+
+    /* Зүрхэнүүд background дээр random унана */
+    .hearts span {
+      position: absolute;
+      top: -50px;
+      color: #ff69b4;
+      font-size: 20px;
+      animation: fall 6s linear infinite;
+      user-select: none;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 30px 20px;
+      }
+
+      .love-image {
+        width: 100px;
+        height: 100px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hearts">
+    <!-- 💖 Зүрхэнүүд олон удаа гарна -->
+    <span style="left: 10%; font-size: 18px; animation-delay: 0s;">💖</span>
+    <span style="left: 25%; font-size: 24px; animation-delay: 2s;">💕</span>
+    <span style="left: 40%; font-size: 20px; animation-delay: 1s;">💘</span>
+    <span style="left: 55%; font-size: 22px; animation-delay: 3s;">💓</span>
+    <span style="left: 70%; font-size: 26px; animation-delay: 1.5s;">💞</span>
+    <span style="left: 85%; font-size: 19px; animation-delay: 2.5s;">💝</span>
+    <span style="left: 5%; font-size: 21px; animation-delay: 1.2s;">💗</span>
+    <span style="left: 30%; font-size: 23px; animation-delay: 0.7s;">💖</span>
+    <span style="left: 60%; font-size: 20px; animation-delay: 1.7s;">💕</span>
+    <span style="left: 80%; font-size: 24px; animation-delay: 0.3s;">💘</span>
+  </div>
+
+  <div class="container">
+    <header>
+      <div class="anniversary">2 жилийн ойн баярын мэнд хайртаа ❤️ 4.27</div>
+      <img src="IMG_0106.JPG" alt="Love Image" class="love-image">
+      <h1>Тавтай морилно уу 💖</h1>
+      <p>Энэ бол таньд зориулагдсан хайрын аялал юм.</p>
+      <a href="about.html" class="btn">Та аялалаа үргэлжлүүлмээр байна уу?</a>
+    </header>
+  </div>
+</body>
+</html>

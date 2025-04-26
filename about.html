@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Хайрын урилга</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(135deg, #ffe6f0, #ffccff);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    header {
+      background: rgba(255, 192, 203, 0.85);
+      border-radius: 30px;
+      padding: 40px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .love-letter {
+      background-color: #fff;
+      color: #f387bd;
+      padding: 30px;
+      border-radius: 25px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      position: relative;
+      animation: fadeIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .letter {
+      font-size: 18px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background-color: #fff;
+  color: #ff69b4;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  margin-top: 20px; /* Энд товчийг доошлуулж байгаа зай */
+}
+
+
+    .btn:hover {
+      background-color: #ffe6f0;
+      transform: scale(1.1);
+    }
+
+    .love-image {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      animation: spin 3s infinite linear;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 30px 20px;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .letter {
+        font-size: 16px;
+      }
+
+      .btn {
+        padding: 12px 24px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <!-- Энд зургийг линк болгосон -->
+      <a href="thank-you.html">
+        <img src="image.png" alt="Love" class="love-image">
+      </a>
+      <h1>Хайрын урилга 💖</h1>
+      <p>
+        Хайрт минь, Чамдаа хоёр жилийн ойн мэндийг хүргэе... <br>
+        Хайрыгаа 5-р сарын 6нд Сэлэнгэ аймаг Сүхбаатар сумд нэг өдрийг хамт өнгөрөөхийг урьж байна.💌
+      </p>
+      <a href="love.html" class="btn">Урилгыг зөвшөөрч байна</a>
+     
+    </header>
+  </div>
+</body>
+</html>
